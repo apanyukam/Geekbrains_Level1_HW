@@ -1,13 +1,19 @@
 package Lesson3;
 
+/*
+Задача 1: Написать программу, которая загадывает случайное число от 0 до 9, и пользователю дается
+3 попытки угадать это число. При каждой попытке компьютер должен сообщить больше ли указанное пользователем
+число чем загаданное, или меньше.
+После победы или проигрыша выводится запрос – «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет).
+ */
+
 import java.util.Scanner;
 
 public class HW_Lesson3_Task1 {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        boolean userDecision = true;
         int i = 9;
         System.out.println("Ваша задача угадать число, используя три попытки");
         while (true) {
@@ -28,9 +34,10 @@ public class HW_Lesson3_Task1 {
         System.out.println("Угадайте число от 0 до " + range);
         while (true) {
             if (y == 3) {
-            System.out.println("Это была последняя попытка! Вы проиграли!");
-            break;
-        }
+                System.out.println("Это была последняя попытка! Вы проиграли!");
+                System.out.println("Загаданное случайное число = " + number);
+                break;
+            }
             int input_number = scanner.nextInt();
             y++;
 
@@ -42,7 +49,6 @@ public class HW_Lesson3_Task1 {
             } else {
                 System.out.println("Загаданное число меньше.");
             }
-
         }
     }
 }
