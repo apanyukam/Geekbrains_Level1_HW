@@ -16,19 +16,17 @@ public class HW_Lesson3_Task1 {
     public static void main(String[] args) {
 
         System.out.println("Ваша задача угадать число, используя три попытки");
-        try {
-            while (true) {
-                playGame(MAX_VALUE);
-                System.out.println("Повторить игру?\nВведите 0 или 1\n1 - ДА, 0 - НЕТ\n");
-                int decision = scanner.nextInt();
-                if (decision == 0) {
-                    System.out.println("Игра завершена. Благодарим за активное участие!");
-                    break;
-                }
+        while (true) {
+            playGame(MAX_VALUE);
+            System.out.println("Повторить игру?\nВведите 0 или 1\n1 - ДА, 0 - НЕТ\n");
+
+            int decision = scanner.nextInt();
+            if (decision == 0) {
+                System.out.println("Игра завершена. Благодарим за активное участие!");
+                break;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
     }
 
     private static void playGame(int range) {
