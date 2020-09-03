@@ -1,9 +1,12 @@
 package Lesson5;
 
 public class Console {
-    private static int SIZE = 5;
-    private static int CHECK_AGE = 40;
+
     public static void main(String[] args) {
+
+        final int SIZE = 5;
+        final int CHECK_AGE = 40;
+
         Employee[] employee = new Employee[SIZE];
         employee[0] = new Employee(1, "Сергей", "Сергеевич", "Сергеев", "Инженер",
                 "sergeev@mail.ru", "+7(901) 101-25-25", 30, 30000);
@@ -16,9 +19,9 @@ public class Console {
         employee[4] = new Employee(5, "Николай", "Семенович", "Смирнов", "Гл. инженер",
                 "smirnov@mail.ru", "+7(901) 101-25-29", 48, 50000);
 
-        for(int i = 0; i < employee.length; i ++){
-            if(employee[i].age > CHECK_AGE){
-                employee[i].printConsole();
+        for (Employee value : employee) {
+            if (value.age > CHECK_AGE) {
+                value.printConsole();
                 System.out.println("----------------------------");
             }
         }
